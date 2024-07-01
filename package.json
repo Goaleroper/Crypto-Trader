@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky",
+    "postversion": "git push --tags && yarn publish . --tag $npm_package_version+1 && git push && echo \"Successfully released version $npm_package_version+1!\""
   },
   "dependencies": {
     "@next/font": "13.4.12",
@@ -29,7 +31,14 @@
   "devDependencies": {
     "@types/react-table": "^7.7.14",
     "autoprefixer": "^10.4.14",
+    "husky": "^9.0.11",
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "(git-branch-is master && yarn version --patch || (yarn --no-git-tag-version version patch)",
+      "pre-push": "(git-branch-is master && npm version patch --no-git-tag-version || (npm --no-git-tag-version version patch && git push --tags)"
+    }
   }
 }
