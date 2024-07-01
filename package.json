@@ -38,7 +38,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn prepush-hook"
+      "pre-push": "npm prepush-hook"
     }
   }
 }
