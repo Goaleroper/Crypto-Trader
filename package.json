@@ -38,8 +38,6 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "git-branch-is master && npm version --patch || npm --no-git-tag-version version patch",
-      "pre-commit": "git-branch-is master && npm version patch && git push --follow-tags",
       "pre-push": ".husky/pre-push"
     }
   }
