@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "postversion": "git push --tags && git push && \"Successfully released version $npm_package_version+1!\""
+    "postversion": "git push --tags && git push && \"Successfully released!\""
   },
   "dependencies": {
     "@next/font": "13.4.12",
