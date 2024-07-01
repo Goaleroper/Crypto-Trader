@@ -1,13 +1,14 @@
 {
   "name": "crypto-trader",
-  "version": "0.1.40",
+  "version": "0.1.29",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postversion": "git push --tags && git push"
   },
   "dependencies": {
     "@next/font": "13.4.11",
@@ -26,6 +27,12 @@
     "react-spinners": "^0.13.8",
     "react-table": "^7.8.0",
     "typescript": "5.1.6"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "git-branch-is master && npm version --patch || npm --no-git-tag-version version patch",
+      "pre-commit": "git-branch-is master && npm version patch && git push --follow-tags"
+    }
   },
   "devDependencies": {
     "@types/react-table": "^7.7.14",
