@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-push": "(git-branch-is main && yarn version --patch || (yarn --no-git-tag-version version patch)"
   },
   "dependencies": {
     "@next/font": "13.4.11",
