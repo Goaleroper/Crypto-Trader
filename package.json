@@ -37,8 +37,8 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is master && yarn version --patch || (yarn --no-git-tag-version version patch)",
-      "pre-push": "(git-branch-is master && npm version patch --no-git-tag-version || (npm --no-git-tag-version version patch && git push --tags)"
+      "post-merge": "git-branch-is master && yarn version --patch || yarn --no-git-tag-version version patch",
+      "pre-push": "git-branch-is master && npm version patch --no-git-tag-version || npm --no-git-tag-version version patch && git push --tags"
     }
   }
 }
