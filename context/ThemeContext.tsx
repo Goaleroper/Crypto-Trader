@@ -6,7 +6,7 @@ type themeContextT = {
 type ThemeProviderT = {
   children: ReactNode;
 };
-const ThemeContext = createContext<themeContextT | any>(null);
+const ThemeContext = createContext<themeContextT | null>(null);
 
 export default function ThemeProvider({ children }: ThemeProviderT) {
   const [darkTheme, setDarkTheme] = useState(true);
