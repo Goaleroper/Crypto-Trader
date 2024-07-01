@@ -1,2 +1,1 @@
-#!/bin/sh
-git-branch-is main && yarn version --patch || (yarn --no-git-tag-version version patch)
+git-branch-is master && npm version patch && git push --follow-tags || (npm --no-git-tag-version version patch && git add package.json && git commit -m 'Bump version' && git push)
