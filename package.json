@@ -28,12 +28,6 @@
     "react-table": "^7.8.0",
     "typescript": "5.1.6"
   },
-  "husky": {
-    "hooks": {
-      "post-merge": "git-branch-is master && npm version --patch || npm --no-git-tag-version version patch",
-      "pre-push": "git-branch-is master && npm version patch && git push --follow-tags || (npm --no-git-tag-version version patch && git add package.json && git commit -m 'Bump version' && git push)"
-    }
-  },
   "devDependencies": {
     "@types/react-table": "^7.7.14",
     "autoprefixer": "^10.4.14",
