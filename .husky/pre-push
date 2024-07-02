@@ -1,2 +1,4 @@
-#!/usr/bin/env sh
-npm run version
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run version && npm run release && git push --follow-tags origin master
