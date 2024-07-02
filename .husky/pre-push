@@ -4,4 +4,3 @@
 yarn version --patch --no-git-tag-version   # Bump patch version in package.json
   git add package.json                       # Stage the updated package.json
   git commit -m "Bump version"               # Commit the version change
-fi
