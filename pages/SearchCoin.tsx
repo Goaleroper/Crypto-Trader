@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import BeatLoader from "react-spinners/BeatLoader";
 import { FaTrash } from "react-icons/fa";
-import React from 'react';
+import React from "react";
 
 const SearchCoin = () => {
   const [selectedCoin, setSelectedCoin] = useState<string>("");
@@ -87,15 +87,15 @@ const SearchCoin = () => {
           Change Theme
         </button>
       </div>
-      <div className="bg-banner bg-cover bg-no-repeat bg-center h-[450px]">
-        <p className="text-white font-bold text-2xl text-center mt-6">
-          Search Coin
-          <br />
-          <span className="text-sm font-medium opacity-70">
-            Get Information From Here
-          </span>
-        </p>
-      </div>
+      {/* <div className="bg-banner bg-cover bg-no-repeat bg-center h-[450px]"> */}
+      <p className="text-white font-bold text-2xl text-center mt-6">
+        Search Coin
+        <br />
+        <span className="text-sm font-medium opacity-70">
+          Get Information From Here
+        </span>
+      </p>
+      {/* </div> */}
       <div
         className={`flex flex-col w-full items-center px-28 ${
           themeCTx?.darkTheme ? "dark" : ""
