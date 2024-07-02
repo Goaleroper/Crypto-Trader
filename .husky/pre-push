@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
- yarn version --patch --no-git-tag-version && git add package.json &&  git commit -m "Bump version" && git tag -a $(jq -r .version package.json) -m "Version $(jq -r .version package.json)"
+ yarn version --patch --no-git-tag-version && git add . package.json &&  git commit -m "Bump version" && git tag -a $(jq -r .version package.json) -m "Version $(jq -r .version package.json)"
