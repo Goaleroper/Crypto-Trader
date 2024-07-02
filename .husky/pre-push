@@ -1,9 +1,17 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+if ! git diff-index --quiet HEAD --; then
+  # Check if the only uncommitted change is the version update in package.json
+  if git diff --name-only HEAD | grep -q "^package.json$"; then
+    # Commit the version bump
+    git add . package.json
+    git commit -m "Bump version"
+  else
+    echo "Working directory is not clean. Please commit your changes before bumping the version."
+    exit 1
+  fi
+fi
 
-yarn version --patch --no-git-tag-version && \
-git add . package.json && \
-git commit -m "Bump version" && \
+yarn version --patch --no-git-tag-version
 git tag -a $(jq -r .version package.json) -m "Version $(jq -r .version package.json)"
-
