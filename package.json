@@ -29,12 +29,7 @@
     "react-table": "^7.8.0",
     "typescript": "5.1.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npx release-it"
-    }
-  },
-  "devDependencies": {
+    "devDependencies": {
     "@types/react-table": "^7.7.14",
     "autoprefixer": "^10.4.14",
     "git-branch-is": "^4.0.0",
