@@ -9,8 +9,7 @@
     "lint": "next lint",
     "release": "node create-release.js",
     "prepare": "husky",
-    "version": "standard-version",
-    "pre-push":".husky/pre-push"
+    "version": "standard-version"
   },
   "dependencies": {
     "@next/font": "13.4.11",
@@ -30,7 +29,12 @@
     "react-table": "^7.8.0",
     "typescript": "5.1.6"
   },
-    "devDependencies": {
+  "husky": {
+    "hooks": {
+      "pre-push": ".husky/pre-push"
+    }
+  },
+  "devDependencies": {
     "@types/react-table": "^7.7.14",
     "autoprefixer": "^10.4.14",
     "git-branch-is": "^4.0.0",
