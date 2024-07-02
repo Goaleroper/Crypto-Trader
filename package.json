@@ -9,7 +9,8 @@
     "lint": "next lint",
     "release": "node create-release.js",
     "prepare": "husky",
-    "version": "standard-version"
+    "version": "standard-version",
+    "pre-push":".husky/pre-push"
   },
   "dependencies": {
     "@next/font": "13.4.11",
