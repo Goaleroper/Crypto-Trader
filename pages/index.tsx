@@ -18,7 +18,7 @@ export default function Home() {
     }
   }, []);
   const handleRoute = () => {
-    router.push({ pathname: "/SearchCoin" });
+    router.push({ pathname: "/SearchCoins" });
   };
 
   return (
