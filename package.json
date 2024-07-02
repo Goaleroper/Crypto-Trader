@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "release": "release-it",
+    "release": "node create-release.js",
     "prepare": "husky",
     "version": "standard-version"
   },
