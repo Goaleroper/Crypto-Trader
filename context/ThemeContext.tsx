@@ -1,7 +1,7 @@
 import { createContext, useState, ReactNode, useContext } from "react";
 type themeContextT = {
-  darkTheme:boolean;
-  toggleTheme:()=>void
+  darkTheme: boolean;
+  toggleTheme: () => void;
 };
 type ThemeProviderT = {
   children: ReactNode;
@@ -9,7 +9,6 @@ type ThemeProviderT = {
 const ThemeContext = createContext<themeContextT | null>(null);
 
 export default function ThemeProvider({ children }: ThemeProviderT) {
-  
   const [darkTheme, setDarkTheme] = useState(true);
   const toggleTheme = () => {
     setDarkTheme((currenTheme) => !currenTheme);
