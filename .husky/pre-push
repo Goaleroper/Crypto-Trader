@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "salaaaaaaaaaaaaaaaaaam:"
+npm run version && npm run release && git push --follow-tags origin master
