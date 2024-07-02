@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "version": "npm version patch"
+    "version": "npm version patch",
+    "pre-push": ".husky/pre-push"
   },
   "dependencies": {
     "@next/font": "13.4.11",
