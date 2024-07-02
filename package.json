@@ -19,6 +19,7 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "font-awesome": "^4.7.0",
+    "git-branch-is": "^4.0.0",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
