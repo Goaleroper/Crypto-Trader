@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run version
+npx husky add .husky/pre-push "npm run version && npm run release && git push --follow-tags origin main"
