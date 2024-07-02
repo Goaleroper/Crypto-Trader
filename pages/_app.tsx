@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Crypto Traders</title>
+        <title>Crypto Trader</title>
         <meta
           name="viewport"
           content="width=device-width , initial-scale=1.0"
