@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky",
-    "pre-push": ".husky/pre-push"
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/font": "13.4.11",
