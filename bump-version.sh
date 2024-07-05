@@ -1,11 +1,9 @@
 #!/bin/sh
 
-if [ -z "$1" ]; then
-  echo "No version bump type provided. Please provide 'patch', 'minor', or 'major'."
+if [ -z "$VERSION_BUMP_TYPE" ]; then
+  echo "No version bump type provided. Please set 'VERSION_BUMP_TYPE' to 'patch', 'minor', or 'major'."
   exit 1
 fi
-
-VERSION_BUMP_TYPE=$1
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")
 TAG_EXISTS=$(git tag -l "v$CURRENT_VERSION")
