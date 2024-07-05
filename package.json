@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "postversion": "lfjglfjlj"
+    "version": "standard-version"
   },
   "dependencies": {
     "@next/font": "13.4.11",
