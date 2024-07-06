@@ -8,8 +8,7 @@ fi
 VERSION_BUMP_TYPE=$1
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")
-NEW_VERSION=npm version $VERSION_BUMP_TYPE
-TAG_EXISTS=$(git tag -l "v$NEW_VERSION")
+TAG_EXISTS=$(git tag -l "v$CURRENT_VERSION")
 
 if [ -z "$TAG_EXISTS" ]; then
   echo "Bumping version with type: $VERSION_BUMP_TYPE"
@@ -20,5 +19,5 @@ if [ -z "$TAG_EXISTS" ]; then
   git tag "v$NEW_VERSION"
   git push origin master --tags
 else
-  echo "Tag v$NEW_VERSION already exists. Skipping version bump."
+  echo "Tag v$CURRENT_VERSION already exists. Skipping version bump."
 fi
