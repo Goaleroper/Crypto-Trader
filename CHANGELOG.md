@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [38.0.1](https://github.com/Goaleroper/Crypto-Trader/compare/v37.0.1...v38.0.1) (2024-07-06)
+
 ### [37.0.1](https://github.com/Goaleroper/Crypto-Trader/compare/v36.0.1...v37.0.1) (2024-07-06)
 
 ### [36.0.1](https://github.com/Goaleroper/Crypto-Trader/compare/v35.0.1...v36.0.1) (2024-07-06)
