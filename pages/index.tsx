@@ -34,7 +34,7 @@ export default function Home() {
             className={`self-end !bg-transparent w-36 border border-slate-700 rounded-3xl m-3 p-3 text-slate-700 text-sm 
             text-center whitespace-nowrap ${themeCTx?.darkTheme ? "dark" : ""}`}
           >
-            Change Themes
+            Change Theme
           </button>
           <ul className="flex absolute bottom-5 self-end mr-24 gap-28">
             {items.map((temp, index) => (
