@@ -1,13 +1,14 @@
 {
   "name": "crypto-trader",
-  "version": "2.0.13",
+  "version": "2.0.12",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "version": "standard-version"
+    "version": "standard-version",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/font": "13.4.11",
