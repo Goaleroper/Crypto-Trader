@@ -12,7 +12,7 @@ VERSION_BUMP_TYPE=$1
 CURRENT_VERSION=$(node -p "require('./package.json').version")
 
 # Bump the version using npm, without creating a Git tag
-NEXT_VERSION=$(npm version $VERSION_BUMP_TYPE --no-git-tag-version | sed 's/v//')
+NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE | sed 's/v//')
 
 # Check if the new version tag already exists
 TAG_EXISTS=$(git tag -l "v$NEXT_VERSION")
