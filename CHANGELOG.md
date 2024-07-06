@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 41.1.0 (2024-07-06)
+
+
+### Features
+
+* add new feature ([224d7d1](https://github.com/Goaleroper/Crypto-Trader/commit/224d7d17e523365b8f9d2f29dd44ce67d696b5c3))
+* add new feature ([6260039](https://github.com/Goaleroper/Crypto-Trader/commit/626003988ff11f747476199d61b69ea7f4fed21f))
+* add new feature ([40576a3](https://github.com/Goaleroper/Crypto-Trader/commit/40576a3ddd2f4bc7a33a390dba2cfd9482c7ab34))
+
 ### [41.0.27](https://github.com/Goaleroper/Crypto-Trader/compare/v41.0.25...v41.0.27) (2024-07-06)
 
 ### [41.0.25](https://github.com/Goaleroper/Crypto-Trader/compare/v41.0.24...v41.0.25) (2024-07-06)
