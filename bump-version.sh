@@ -13,10 +13,10 @@ TAG_EXISTS=$(git tag -l "v$CURRENT_VERSION")
 if [ -z "$TAG_EXISTS" ]; then
   echo "Bumping version with type: $VERSION_BUMP_TYPE"
   npm version $VERSION_BUMP_TYPE
-  git push --tags origin master
+  
 else
   echo "Tag v$CURRENT_VERSION already exists. Bumping to the next available version."
-  npm version patch  # Example: Always bumping to the next patch version
+  # npm version patch  # Example: Always bumping to the next patch version
 fi
 
 # if [ -z "$1" ]; then
