@@ -1,23 +1,28 @@
 #!/bin/sh
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+if [ -z "$1" ]; then
+  echo "No version bump type provided. Please provide 'patch', 'minor', or 'major' as an argument."
+  exit 1
+fi
 
-if [ "$current_branch" = "master" ]; then
-  # Set the VERSION_BUMP_TYPE environment variable as needed
-  export VERSION_BUMP_TYPE=major  # Replace with 'patch', 'minor', or 'major' as required
+VERSION_BUMP_TYPE=$1
 
-  # Run bump-version.sh script to bump version
-  ./bump-version.sh $VERSION_BUMP_TYPE
+CURRENT_VERSION=$(node -p "require('./package.json').version")
+NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE | sed 's/v//')
+TAG_EXISTS=$(git tag -l "v$NEXT_VERSION")
 
-  # Check if version bumping was successful
-  if [ $? -eq 0 ]; then
-    echo "Version bumped successfully. Pushing changes..."
-    git push origin master --tags
-  else
-    echo "Version bump not needed or failed. Pushing without version change..."
-    git push origin master
-  fi
+if [ -z "$TAG_EXISTS" ]; then
+  echo "Bumping version from $CURRENT_VERSION to $NEXT_VERSION"
+  npm version $VERSION_BUMP_TYPE --no-git-tag-version
+  git add package.json
+  git commit -m "Bump version to $NEXT_VERSION"
+  git tag "v$NEXT_VERSION"
+  echo "Version bumped to $NEXT_VERSION"
+  exit 0
 else
-  # Push changes from non-master branch directly
-  git push origin "$current_branch"
+  echo "Tag v$NEXT_VERSION already exists. Skipping version bump."
+  # Revert the version change in package.json
+  npm version $CURRENT_VERSION --no-git-tag-version --allow-same-version
+  echo "Version remains at $CURRENT_VERSION"
+  exit 1
 fi
