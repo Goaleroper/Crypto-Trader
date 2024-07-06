@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "version": "standard-version",
+  
     "prepare": "husky"
   },
   "dependencies": {
