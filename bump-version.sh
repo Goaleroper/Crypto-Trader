@@ -8,12 +8,11 @@ fi
 VERSION_BUMP_TYPE=$1
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")
-NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE --json | node -p "JSON.parse(process.stdin.read()).version")
+NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE | sed 's/v//')
 TAG_EXISTS=$(git tag -l "v$NEXT_VERSION")
 
 if [ -z "$TAG_EXISTS" ]; then
   echo "Bumping version from $CURRENT_VERSION to $NEXT_VERSION"
-  npm version $VERSION_BUMP_TYPE --no-git-tag-version
   git add package.json
   git commit -m "Bump version to $NEXT_VERSION"
   git tag "v$NEXT_VERSION"
