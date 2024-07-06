@@ -8,7 +8,7 @@ fi
 VERSION_BUMP_TYPE=$1
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")
-NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE --json | jq -r '.version')
+NEXT_VERSION=$(npm --no-git-tag-version version $VERSION_BUMP_TYPE --json | node -p "JSON.parse(process.stdin.read()).version")
 TAG_EXISTS=$(git tag -l "v$NEXT_VERSION")
 
 if [ -z "$TAG_EXISTS" ]; then
