@@ -1,6 +1,6 @@
 {
   "name": "crypto-trader",
-  "version": "80.0.11",
+  "version": "80.0.12",
   "private": true,
   "scripts": {
     "dev": "next dev",
