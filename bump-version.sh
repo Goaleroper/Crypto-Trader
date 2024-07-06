@@ -16,9 +16,12 @@ if [ -z "$TAG_EXISTS" ]; then
   git add package.json
   git commit -m "Bump version to $NEXT_VERSION"
   git tag "v$NEXT_VERSION"
-  git push origin master --tags
+  echo "Version bumped to $NEXT_VERSION"
+  exit 0
 else
   echo "Tag v$NEXT_VERSION already exists. Skipping version bump."
   # Revert the version change in package.json
   npm version $CURRENT_VERSION --no-git-tag-version --allow-same-version
+  echo "Version remains at $CURRENT_VERSION"
+  exit 1
 fi
