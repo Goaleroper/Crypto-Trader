@@ -19,7 +19,7 @@ TAG_EXISTS=$(git tag -l "v$CURRENT_VERSION")
 # else
 #   echo "Tag v$CURRENT_VERSION already exists. Bumping to the next available version."
 #   npm version patch  # Example: Always bumping to the next patch version
-fi
+# fi
 
 # if [ -z "$1" ]; then
 #   echo "No version bump type provided. Please provide 'patch', 'minor', or 'major' as an argument."
