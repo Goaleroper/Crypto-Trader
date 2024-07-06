@@ -8,7 +8,7 @@ fi
 VERSION_BUMP_TYPE=$1
 
 # Bump the version and check the new version
-NEW_VERSION=$(npm version $VERSION_BUMP_TYPE --json | jq -r '.version')
+NEW_VERSION=$(npm version $VERSION_BUMP_TYPE)
 TAG_EXISTS=$(git tag -l "v$NEW_VERSION")
 
 if [ -z "$TAG_EXISTS" ]; then
