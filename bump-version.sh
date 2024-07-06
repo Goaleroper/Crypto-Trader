@@ -18,5 +18,3 @@ else
   exit 0
 fi
 
-# Now commit the version change and tag
-git push --follow-tags origin master
