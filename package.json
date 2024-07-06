@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "version": "standard-version",
+    "postversion": "git push --tags",
     "prepare": "husky"
   },
   "dependencies": {
