@@ -12,7 +12,7 @@ TAG_EXISTS=$(git tag -l "v$CURRENT_VERSION")
 
 if [ -z "$TAG_EXISTS" ]; then
   echo "Bumping version with type: $VERSION_BUMP_TYPE"
-  npm version $VERSION_BUMP_TYPE
+  npm run version $VERSION_BUMP_TYPE
 else
   echo "Tag v$CURRENT_VERSION already exists. Skipping version bump."
 fi
